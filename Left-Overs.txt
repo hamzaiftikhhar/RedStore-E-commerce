@@ -1,0 +1,9 @@
+
+1-Email to the forgetted password 
+2-Dummy to origional data add
+3-Sorting of data from the database also the search the product by its name
+4-Updatation and deletion from the database 
+5-Admin side data,charts,sale,products
+6-If i sell something it would decreament the data from the database 
+7-About and Contact page Addition
+8-Remove button in the cart

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/s logo.png" />
+    <title>Contact Us - RedStore</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      /* Additional styles for the contact card */
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .contact-card {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .contact-form button {
+        padding: 10px;
+        background-color: #ff523b;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #ff523b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar form-group form-control">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="AboutUs.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="Account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
+        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+      </div>
+    </div>
+
+    <!-- Contact Card -->
+    <div class="contact-card">
+      <h2>Contact Us</h2>
+      <div style="height: 20px"></div>
+      <p>Feel free to reach out to us. We are here to help!</p>
+      <div style="height: 20px"></div>
+      <div class="contact-form">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your Name"
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          style="height: 90px"
+          placeholder="Enter your message"
+        ></textarea>
+        <div style="color: #ff523b" id="emptyfield-message"></div>
+        <br>
+        <button type="submit" onclick="submitContactForm();sendEmail()">
+          Submit
+        </button>
+      </div>
+    </div>
+    <div style="height: 150px"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" alt="" />
+              <img src="images/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo-white.png" />
+            <p>
+              Our Purpose Is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <!--horizontal line-->
+        <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+      </div>
+    </div>
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+      var menuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+    <!-- Include this script in your HTML file -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+
+    <script>
+      async function submitContactForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        if (name == "" || email == "" || message == "") {
+          document.getElementById("emptyfield-message").innerHTML =
+            "Please fill all the fields";
+        } else {
+         
+
+        
+        try {
+          const response = await fetch(
+            "http://localhost:3000/submitContactForm",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name, email, message }),
+            }
+          );
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            throw new Error(
+              data.message || "Failed to submit the contact form"
+            );
+          }
+
+          // Successful form submission, you can handle the response as needed
+          console.log("Contact form submitted successfully!");
+        } catch (error) {
+          console.error("Error during contact form submission:", error);
+          // Handle error and show a message to the user if needed
+        }
+        document.getElementById("emptyfield-message").innerHTML = "";
+        }
+        //empty the fields after the submit button clicked
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        
+      }
+      //function to use nodemailer
+
+      function sendEmail() {
+        (function () {
+          emailjs.init("F66PIMyLn6IuHQbuE");
+        })();
+
+        var nameValue = document.getElementById("name").value;
+
+        var emailValue = document.getElementById("email").value;
+        var messageValue = document.getElementById("message").value;
+
+        emailjs
+          .send("service_1q2qz9d", "template_1q2qz9d", {
+            from_name: nameValue,
+            to_name: emailValue,
+            message: messageValue,
+          })
+          .then(
+            function (response) {
+              console.log("SUCCESS", response);
+            },
+            function (error) {
+              console.log("FAILED", error);
+            }
+          );
+
+        var params = {
+          sendername: nameValue,
+          to: emailValue,
+          message: messageValue,
+        };
+
+        var serviceID = "service_nrxay9j";
+        var templateID = "template_yg1dj79";
+
+        emailjs
+          .send(serviceID, templateID, params)
+          .then((res) => {
+            alert("Email Sent Successfully");
+          })
+          .catch((err) => console.log(err));
+      }
+    </script>
+  </body>
+</html>

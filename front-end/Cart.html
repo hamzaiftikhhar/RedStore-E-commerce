@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/s logo.png" />
+    <title>All Products - RedStore</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        td input {
+    width: 44px;
+    height: 44px;
+    
+    }
+    </style>
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head> 
+  <body>
+    <!--<div class ="header">-->
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li id="about"><a href="AboutUs.html">About</a></li>
+            <li id="contact"><a href="Contact.html">Contact</a></li>
+            <li id="addProducts"><a href="AddProducts.html">Add Products</a></li>
+            <li id="dashboard"><a href="AdminDashboard.html">Dashboard</a></li>
+            <li><a href="Account.html">Account</a></li>
+          </ul>
+        </nav>
+      
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
+        
+
+        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+      </div>
+    </div>
+    <!--</div>-->
+
+    <!------------------------------ cart items details------------------------------>
+
+    <div id="app">
+     
+    </div>
+
+    <!----------------------------------footer------------------------------------->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" alt="" />
+              <img src="images/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo-white.png" />
+            <p>
+              Our Purpose Is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+        <!--horizontal line-->
+        <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+      </div>
+    </div>
+
+    <!-----------------------------------js for toggle menu-------------------------------------->
+    <script>
+      window.onload = function () {
+        getCartData();
+      };
+    
+      function getCartData() {
+        fetch("http://localhost:3000/getCart")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            cartHtml(data);
+          });
+      }
+    
+      function removeItem(productId) {
+        // Call the backend endpoint to remove the item from the cart
+        fetch(`http://localhost:3000/removeFromCart/${productId}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            // After successful removal, refresh the cart data
+            getCartData();
+          });
+      }
+    
+      function cartHtml(data) {
+        let html = `<div class="small-container cart-page">
+          <table>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>`;
+    
+        let total = 0;
+        for (let i = 0; i < data.length; i++) {
+          const element = data[i];
+    
+          html += `<tr>
+              <td>
+                  <div class="cart-info">
+                      <div>
+                          <p>${element.productName}</p>
+                          <small>Price: ${element.Price.toFixed(2)}</small><br />
+                          <a href="#" onclick="removeItem(${element.ProductID})">Remove</a>
+                      </div>
+                  </div>
+              </td>
+              <td><input type="number" value="${element.Quantity}" readonly /></td>
+              <td>${(element.Price * element.Quantity).toFixed(2)}</td>
+            </tr>`;
+          total += element.Price * element.Quantity;
+        }
+    
+        html += `</table>
+          <div class="total-price">
+            <table>
+              <tr>
+                <td>Subtotal</td>
+                <td>${total.toFixed(2)}</td>
+              </tr>
+              <!-- Add Tax and Total rows here -->
+            </table>
+          </div>
+    
+          <a href="Address.html" class="btn" style="margin-left: 940px" @click="checkout">Check out</a>
+        </div>`;
+    
+        document.getElementById("app").innerHTML = html;
+      }
+    </script>
+    <script src="index"></script>
+  </body>
+</html>

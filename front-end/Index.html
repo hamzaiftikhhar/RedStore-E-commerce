@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/s logo.png" />
+    <title>RedStore | Luxury Life</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+          </div>
+          <nav>
+            <ul id="MenuItems">
+              <li><a href="Index.html">Home</a></li>
+              <li><a href="Products.html">Products</a></li>
+              <li id="about"><a href="AboutUs.html">About</a></li>
+              <li id="contact"><a href="Contact.html">Contact</a></li>
+              <li id="addProducts"><a href="AddProducts.html">Add Products</a></li>
+              <li id="dashboard"><a href="AdminDashboard.html">Dashboard</a></li>
+              <li><a href="Account.html">Account</a></li>
+            </ul>
+          </nav>
+          <div id="user-cart">
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" >
+        </div>
+        <button type="button" id="logout" class="btn" style="width: 120px; text-align: center;border-radius: 18px; " onclick="logout()">Logout</button>
+      
+        
+          <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <h1>Give your Workout <br />A New Style!</h1>
+            <p>
+              Success isn't always about greatness. It's about consistency.
+              Consistent<br />hard work gains success. Greatness will come.
+            </p>
+            <a href="products.html" class="btn">Explore Now &#8594;</a>
+          </div>
+          <div class="col-2">
+            <img src="images/image1.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------ featured categories------------------------------>
+    <div class="categories">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-3">
+            <img src="images/blackball.jpg" />
+          </div>
+          <div class="col-3">
+            <img src="images/airblue.jpg" />
+          </div>
+          <div class="col-3">
+            <img src="images/grass.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------ featured Products------------------------------>
+    <div class="small-container">
+      <h2 class="title">Featured Products</h2>
+      <div class="row">
+        <div class="col-4">
+          <a href="products-details.html"
+            ><img src="images/tania-artemova-g5GXUqF_QDI-unsplash.jpg"
+          /></a>
+          <a href="products-details.html"><h4>Downshifter Sports Hoodie</h4></a>
+          <div class="rating">
+            <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>Rs 4800</p>
+        </div>
+        <div class="col-4">
+          <a href="products-details.html"><img src="images/product-2.jpg" /></a>
+          <h4>Lace-Up Running Shoes</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <p>Rs 7999</p>
+        </div>
+        <div class="col-4">
+          <a href="products-details.html"><img src="images/justin-buisson-JU5_bUxr5Rg-unsplash.jpg" /></a>
+          <h4>Fastening SweatShirt </h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>Rs 2200</p>
+        </div>
+        <div class="col-4">
+          <a href="products-details.html"
+            ><img src="images/product-6.jpg"
+          /></a>
+          <h4>Flat T-Shirt</h4>
+          <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+          </div>
+          <p>Rs 1999</p>
+        </div>
+      </div>
+
+      <h2 class="title">Latest Products</h2>
+     
+      <div id="productContainer" class="row"></div>
+    </div>
+
+    <!--------------------------`   offer   --------------------------------->
+    <div class="offer">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-2">
+            <img src="images/image1.png" class="offer-img" />
+          </div>
+          <div class="col-2">
+            <p>Exclusively Available on RedStore</p>
+            <h1>Sports Shoes</h1>
+            <small>
+              Buy latest collections of sports shoes online on Redstore at best
+              prices from top brands such as Adidas, Nike, Puma, Asics, and
+              Sparx at your leisure at best prices. </small
+            ><br />
+            <a href="products.html" class="btn">Buy Now &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------Testimonial---------------------------------->
+    <div class="testimonial">
+      <div class="small-container">
+        <h2 class="title">Ambition</h2>
+        <div class="row">
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>
+              Swift Cart was established with a clear mission: to redefine
+              online shopping through a user-centric approach, diverse product
+              offerings, and a commitment to quality. The future holds ambitions
+              of industry leadership and a dedication to creating a secure and
+              enjoyable shopping environment for customers.
+            </p>
+          </div>
+
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>
+              As for the future of the website, it envisions sustained growth,
+              innovation, and adaptation to emerging technologies. Swift Cart
+              aspires to become a leading player in the e-commerce industry,
+              continually expanding its product offerings, enhancing user
+              interface and experience, and embracing cutting-edge technologies
+              to stay ahead of market trends
+            </p>
+
+            <img src="./images/HAMZA-GREY.png" />
+            <h3>ALI HAMZA</h3>
+          </div>
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>
+              Swift Cart, founded with a mission to transform online shopping,
+              focuses on user-centricity, quality products, and innovation. As
+              it looks ahead, the vision is to lead the industry with sustained
+              growth, technological advancements, and a secure, enjoyable
+              shopping experience for all customers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------Brands------------------------------------>
+    <div class="brands">
+      <div class="small-container">
+        <div class="row">
+          <div class="col-5">
+            <img src="images/logo-godrej.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="images/logo-oppo.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="images/logo-coca-cola.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="images/logo-paypal.png" alt="" />
+          </div>
+          <div class="col-5">
+            <img src="images/logo-philips.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------------footer------------------------------------->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" alt="" />
+              <img src="images/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo-white.png" />
+            <p>
+              Our Purpose Is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+        <!--horizontal line-->
+        <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <!-----------------------------------js for toggle menu----------------------------------------------->
+    <script>
+      var menuItems = document.getElementById("MenuItems");
+
+      menuItems.style.maxHeight = "0px";
+
+      function menuToggle() {
+        if (menuItems.style.maxHeight === "0px") {
+          menuItems.style.maxHeight = "200px";
+        } else {
+          menuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        uploadImage();
+      });
+
+      async function uploadImage() {
+        const response = await fetch("http://localhost:3000/getProducts", {
+          method: "GET",
+        });
+
+        const result = await response.json();
+
+        // Assuming there is a container element with the id 'productContainer'
+        const productContainer = document.getElementById("productContainer");
+
+        result.forEach((product) => {
+          const productDiv = document.createElement("div");
+          productDiv.classList.add("col-4");
+
+          // Assuming each product has an 'imagePath', 'name', 'rating', and 'price' property
+          if (product.ImagePath) {
+            product.ImagePath = JSON.parse(product.ImagePath)[0];
+          }
+
+          productDiv.innerHTML = `
+            <a href="products-details.html?productId=${
+              product.ProductID
+            }"><img src="http://localhost:3000/${product.ImagePath}"></a>
+            <h4>${product.Name}</h4>
+          
+            <p>${"Rs" + product.Price}</p>
+        `;
+
+          productContainer.appendChild(productDiv);
+        });
+      }
+
+      // Function to generate star rating based on a numerical rating
+      function generateStarRating(rating) {
+        const fullStars = Math.floor(rating);
+        const halfStar = rating % 1 !== 0;
+
+        let starsHtml = "";
+        for (let i = 0; i < fullStars; i++) {
+          starsHtml += '<i class="fa fa-star"></i>';
+        }
+
+        if (halfStar) {
+          starsHtml += '<i class="fa fa-star-half-o"></i>';
+        }
+
+        return starsHtml;
+      }
+    </script>
+  </body>
+</html>

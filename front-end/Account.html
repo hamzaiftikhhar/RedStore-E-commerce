@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/s logo.png">
+    <title>All Products - RedStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  
+    
+</head>
+<style>
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+.blur-card {
+  background: rgba(255, 248, 248, 0.5); /* Adjust the alpha value as needed */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+    .profile-pic {
+      width: 20px;
+      height: 20px;
+      border-radius: 120px;
+      margin-bottom: 10px;
+    }
+
+</style>
+
+<body>
+    <!--<div class ="header">-->
+       
+    <!--</div-->
+
+    <div class="header">
+        <div class="container">
+            <div style="height: 23px;"></div>
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+                </div>
+                <nav>
+                  <ul id="MenuItems">
+                    <li><a href="Index.html" style="color: rgb(65, 62, 62);">Home</a></li>
+                    <li><a href="Products.html" style="color: rgb(65, 62, 62);">Products</a></li>
+                    <li><a href="AboutUs.html" style="color: rgb(65, 62, 62);">About</a></li>
+                    <li><a href="Contact.html" style="color: rgb(65, 62, 62);">Contact</a></li>
+                    <li><a href="Account.html" style="color: rgb(65, 62, 62);">Account</a></li>
+                  </ul>
+                </nav>
+                <a href="cart.html"
+                  ><img src="images/cart.png" width="30px" height="30px"
+                /></a>
+                <!-- <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" /> -->
+              </div>
+            <!-- <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" /> -->
+        </div>
+        <div class="account-page">
+            <div class="container">
+                <div class="row">
+                    <!-- Data login-->
+                    <div class="col-lg-6">
+                        <img src="images/image1.png " width="125%">
+                    </div>
+                    
+                    
+        <div style="font-family: Montserrat">
+            <div class="container " style="color: rgb(0, 0, 0);">
+                
+            
+           
+        <form id="LoginForm">
+            <input type="text" class="form-control" placeholder="Email" id="email" style="height: 35px;border-radius: 18px;"><br>
+            <input type="password" class="form-control" id="password" placeholder="Password" style="height: 35px;border-radius: 18px;"><br>
+            
+            <a href="javascript:void(0)" style="color: black; font-size: medium;" onclick="forgetPassword()">Forgot Password?</a><br>
+    
+            <div style="color: red;" id="error-message"></div>
+    
+            <button type="button" class="btn" style="width: 300px; text-align: center;border-radius: 18px; " onclick="login()">Login</button>
+            <a href="javascript:void(0)"></a>
+            
+            <p>Don't have an account? <a href="Address.html" style="color: black; font-size: small;">SignUp</a></p>
+        </form>
+    </div>
+    
+    
+
+    <div id="loggedin-div">
+        
+    <!-- <div class="blur-card" style="width: 400px; margin-left:60px" id="profileCard">
+        <img src="/images/person-flat.png">
+        <DIV style="height: 30px;"></DIV>
+        <h5><p id="loggedInEmail">alihamxa366@gmail.com</p></h3>
+            
+            <button type="button" class="btn" style="width: 200px; text-align: center;border-radius: 18px; " onclick="logout()">Logout</button>
+            <a href="javascript:void(0)"></a>
+            
+        </div> -->
+    </div>
+</div>
+</div>
+
+            </div>
+        </div>
+        <div style="height: 200px;"></div>  
+        </div>   
+      <!-- --------------------------------footer-------------------------------------> 
+    <div class="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="">
+                        <img src="images/app-store.png" alt="">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr><!--horizontal line-->
+            <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+
+        </div>
+    </div>
+    
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-----------------------------------js for toggle menu-------------------------------------->
+    <script>
+        var menuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <!-----------------------------------js for toggle form-------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        // function login() {
+        //     var email = $("#email").val();
+        //     var password = $("#password").val();
+    
+        //     if (email === "" || password === "") {
+        //         $("#error-message").html("Email and password are required.");
+        //     } else {
+        //         // Perform login logic here
+        //         // If login is successful, you can redirect or perform other actions
+        //         $("#error-message").html(""); // Clear error message on successful login
+        //         $("#RegForm").css("transform", "translateX(300px)");
+        //         $("#LoginForm").css("transform", "translateX(300px)");
+        //         $("#Indicator").css("transform", "translateX(0px)");
+        //     }
+        // }
+    
+        function forgetPassword() {
+            var email = $("#email").val();
+    
+            if (email === "") {
+                $("#error-message").html("Email is required for password recovery.");
+            } else {
+                // Perform forget password logic here
+
+
+                // You may want to send a recovery email or show a success message
+                $("#error-message").html(""); // Clear error message on success
+                window.location.href = "ForgetPassword.html";
+            }
+        }
+    
+        async function login() {
+            const email = $("#email").val();
+            const password = $("#password").val();
+    
+            try {
+                const response = await fetch('http://localhost:3000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+    
+                const data = await response.json();
+    
+                if (!response.ok) {
+                    throw new Error(data.message || 'Failed to login');
+                }
+
+                localStorage.setItem('admin', data.success);
+    
+                // Successful login, redirect or perform other actions
+                console.log('Login successful');
+                window.location.href = '/AdminDashboard.html'; // Redirect to the dashboard or another page
+            } catch (error) {
+                console.error('Error during login:', error);
+                $("#error-message").text('Invalid email or password');
+            }
+        }
+        
+    </script>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

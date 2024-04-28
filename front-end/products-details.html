@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/s logo.png" />
+    <title>All Products - RedStore</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
+      #success-message {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+  </style>
+  <body>
+    <!--<div class ="header">-->
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li id="about"><a href="AboutUs.html">About</a></li>
+            <li id="contact"><a href="Contact.html">Contact</a></li>
+            <li id="addProducts"><a href="AddProducts.html">Add Products</a></li>
+            <li id="dashboard"><a href="AdminDashboard.html">Dashboard</a></li>
+            <li><a href="Account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
+      
+        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+      </div>
+      <div id="success-message" style="color: green;"></div>
+    </div>
+    <!--</div>-->
+
+    <!------------------------------ Single product details------------------------------>
+    <div class="small-container single-product">
+      <!--<h2 class="title" >Featured Products</h2>-->
+      <div class="row">
+       <div id="single-product"></div> 
+
+      </div>
+    </div>
+
+    <!----------------------------------Title------------------------------------->
+    <div class="small-container">
+      <div class="row row-2">
+        <h2>Related Products</h2>
+        <a href="products.html"><p>View More</p></a>
+      </div>
+    </div>
+
+    <!----------------------------------products------------------------------------->
+    <div class="small-container">
+    <div class="row">
+      <div class="col-4">
+        <a href="products-details.html"
+          ><img src="images/tania-artemova-g5GXUqF_QDI-unsplash.jpg"
+        /></a>
+        <a href="products-details.html"><h4>Downshifter Sports Hoodie</h4></a>
+        <div class="rating">
+          <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-o"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <p>Rs 4800</p>
+      </div>
+      <div class="col-4">
+        <a href="products-details.html"><img src="images/product-2.jpg" /></a>
+        <h4>Lace-Up Running Shoes</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>Rs 7999</p>
+      </div>
+      <div class="col-4">
+        <a href="products-details.html"><img src="images/justin-buisson-JU5_bUxr5Rg-unsplash.jpg" /></a>
+        <h4>Fastening SweatShirt </h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <p>Rs 2200</p>
+      </div>
+      <div class="col-4">
+        <a href="products-details.html"
+          ><img src="images/product-6.jpg"
+        /></a>
+        <h4>Flat T-Shirt</h4>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <p>Rs 1999</p>
+      </div>
+    </div>
+  </div>
+    <!----------------------------------footer------------------------------------->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" alt="" />
+              <img src="images/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo-white.png" />
+            <p>
+              Our Purpose Is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr />
+        <!--horizontal line-->
+        <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <!-----------------------------------js for toggle menu----------------------------------------------->
+    <script>
+      var menuItems = document.getElementById("MenuItems");
+
+      MenuItems.style.maxHeight = "0px";
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <!-----------------------js for product gallery-------------------->
+
+    <script>
+      var productImg = document.getElementById("productImg");
+      var smallImg = document.getElementsByClassName("small-img");
+debugger
+      smallImg[0].onclick = function () {
+        productImg.src = smallImg[0].src;
+      };
+      smallImg[1].onclick = function () {
+        productImg.src = smallImg[1].src;
+      };
+      smallImg[2].onclick = function () {
+        productImg.src = smallImg[2].src;
+      };
+      smallImg[3].onclick = function () {
+        productImg.src = smallImg[3].src;
+      };
+    </script>
+    <script>
+      var _productId = null;
+     window.addEventListener("DOMContentLoaded", async function () {
+  // get query string from productId in url
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("productId");
+  _productId = productId ? productId : 1;
+  // send a request to get the product details from the server
+  fetch(`http://localhost:3000/getProduct/${productId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.length) {
+        data = data[0];
+      }
+      let images = [];
+      if (data.ImagePath) {
+        images = JSON.parse(data.ImagePath);
+      }
+
+      createProductHtml(
+        images,
+        data.Name,
+        data.Price,
+        data.Quantity,
+        data.Size,
+        data.Description
+      );
+    });
+});
+
+function createProductHtml(images, name, price, quantity, size, description) {
+  let html = `
+    <div class="small-container single-product">
+      <!--<h2 class="title" >Featured Products</h2>-->
+      <div class="row">
+        <div class="col-2">
+          <img src="http://localhost:3000/${images[0]}" width="100%" id="productImg" />
+          <div class="small-img-row">
+  `;
+
+  for (let image of images) {
+    html += `
+      <div class="small-img-col">
+        <img src="http://localhost:3000/${image}" width="100%" class="small-img" />
+      </div>`;
+  }
+
+  html += `</div>
+    </div>`;
+
+  html += `
+    <div class="col-2">
+      <p>Home / Shoes</p>
+      <h1>${name}</h1>
+      <h4>${price}</h4>
+      <select>
+        <option>Select Size</option>
+        <option>S<!--Small (s)--></option>
+        <option>M<!--Medium (M)--></option>
+        <option>L<!--Large (L)--></option>
+        <option>XL<!--XL--></option>
+        <option>XXL<!--XXL--></option>
+      </select>
+      <br>
+      <b><div>Add Product Quantity</div></b>
+      <input id="selectedQuantity" type="number" value="1" min="1" max="${quantity}" />
+      <a href="#" class="btn" onclick="showInCart(${_productId} ,'${name}', '${price}', '${quantity}', '${size}')">Add to Cart</a>
+      <h3>Product Details <i class="fa fa-indent"></i></h3>
+      <br />
+      <p>${description}</p>
+    </div>
+  </div>
+</div>
+`;
+
+  document.querySelector("#single-product").innerHTML = html;
+}
+let selectedQuantity;
+function showInCart(productId ,name, price, quantity, size) {
+  // Get the current product details
+ selectedQuantity = document.getElementById("selectedQuantity").value 
+  var currentProductDetails = {
+    name: name,
+    price: price,
+    quantity: selectedQuantity,
+    size: size,
+    productId: productId,
+  };
+
+  // Store the product details in sessionStorage
+  sessionStorage.setItem("currentProductDetails", JSON.stringify(currentProductDetails));
+
+  // Send a request to add the product details to the cart in the database
+  addToCart(currentProductDetails);
+}
+
+// Function to send a request to add the product details to the cart in the database
+async function addToCart(productDetails) {
+  try {
+    const response = await fetch("http://localhost:3000/addToCart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        productDetails: productDetails,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add the product to the cart.");
+    }
+
+    // Handle success as needed
+    document.getElementById("success-message").style.display = "block";
+    console.log("Product added to the cart successfully!");
+  } catch (error) {
+    console.error("Error adding product to the cart:", error);
+  }
+}
+
+    </script>
+  </body>
+</html>

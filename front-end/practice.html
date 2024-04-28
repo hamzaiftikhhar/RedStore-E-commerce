@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <!-- Include Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include the email.js library -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control" id="message" name="message" required></textarea>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="sendEmail()">Send Message</button>
+    </form>
+</div>
+
+<script>
+    // Initialize email.js with your user ID
+    emailjs.init("user_your_emailjs_user_id");
+
+    function sendEmail() {
+        // Get user input values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Prepare email parameters
+        var params = {
+            from_name: name,
+            from_email: email,
+            message: message
+        };
+
+        // Send email using email.js
+        emailjs.send("your_emailjs_service_id", "your_emailjs_template_id", params)
+            .then(function(response) {
+                console.log("Email sent successfully:", response);
+                alert("Your message has been sent successfully!");
+                // You can redirect or perform additional actions after successful submission
+            }, function(error) {
+                console.log("Failed to send email. Error:", error);
+                alert("Oops! Something went wrong. Please try again later.");
+            });
+    }
+</script>
+
+</body>
+</html>

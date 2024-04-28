@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logo.png">
+    <title>Contact Us - RedStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Additional styles for the contact card */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .contact-card {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #ff523b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff523b;
+        }
+
+        .card-details {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+            <div class="logo">
+            </div>
+            <nav  > <div style="height: 23px;"></div>
+                <ul id="MenuItems">
+                    <a href="index.html" style="margin-right: 370px;"><img src="images/logo.png" width="125px"></a>
+                    
+                    <li><a href="Index.html" style="color: black;">Home</a></li>
+                    <li><a href="Products.html" style="color: black;">Products</a></li>
+                    <li id="about"><a href="AboutUs.html" style="color: black;">About</a></li>
+                    <li id="contact"><a href="Contact.html" style="color: black;">Contact</a></li>
+                    <li id="addProducts"><a href="AddProducts.html" style="color: black;">Add Products</a></li>
+                    <li id="dashboard"><a href="AdminDashboard.html" style="color: black;">Dashboard</a></li>
+                    <li><a href="Account.html" style="color: black;">Account</a></li>
+                    
+                    <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon" onClick="menutoggle()">
+        </div>
+    </div>
+<div style="height: 90px;"></div>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contact-card">
+                        <h2>Checkout</h2>
+
+                        <form class="contact-form">
+                            <h4>Contact</h4>
+                            <div class="form-group">
+                                <p>Have an account? <a href="Account.html" style="font-size: 15px; color: black;">Log in</a></p>
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Example@gmail.com">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <div style="color: #ff523b;" id="Password-validations"></div>
+                            </div>
+                           
+                            <h4>Delivery</h4>
+                            <div class="form-group">
+                                <label for="firstName">First name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" placeholder="Address">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="City">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postalCode">Postal code</label>
+                                <input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                            </div>
+
+                            <h4>Shipping method</h4>
+                            <div class="form-group">
+                                <label for="shippingMethod">Choose a shipping method</label>
+                                <select class="form-control" id="shippingMethod">
+                                    <option class="fa-optin-monster">Free Shipping Across Pakistan</option>
+                                    <!-- Add more shipping options if needed -->
+                                    <!-- ... -->
+                                </select>
+                            </div>
+                            <h4>Payment</h4>
+                            <p>All transactions are secure and encrypted.</p>
+                            <div class="form-group">
+                                <label for="paymentMethod">Choose a payment method</label>
+                                <select class="form-control" id="paymentMethod" onchange="togglePaymentOptions()">
+                                    <option value="COD">Cash on Delivery (COD)</option>
+                                    <option value="Debit - Credit Card">Debit - Credit Card</option>
+                                    <!-- Add more payment options if needed -->
+                                    <!-- ... -->
+                                </select>
+                            </div>
+                            
+                            <div class="card-details" id="cardPaymentOptions" style="display: none;">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="Enter CVV">
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="cardholderName">Cardholder Name</label>
+                                    <input type="text" class="form-control" id="cardholderName" placeholder="Enter cardholder name">
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="expirationDate">Expiration Date</label>
+                                    <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY">
+                                </div>
+                            </div>
+                            
+                            <div id="codInfo" style="display: none;">
+                                <p>COD (Cash on Delivery) is a payment option that allows the buyer to pay when the product is delivered to him. Once the courier has received the money, only then will he give the parcel to the customer.</p>
+                            </div>
+                           
+<div style="color: #ff523b;" id="emptyfields-message"></div>
+                            <button type="submit" class="btn btn-primary" onclick="submitOrder()">Complete order</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 200px;"></div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download App for Android and iOS mobile phones.</p>
+                        <div class="app-logo">
+                            <img src="images/play-store.png" alt="">
+                            <img src="images/app-store.png" alt="">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="images/logo-white.png">
+                        <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr><!--horizontal line-->
+                <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+ <!-- Additional script for COD info and card payment options -->
+<script>
+    var menuItems = document.getElementById("MenuItems");
+    menuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (menuItems.style.maxHeight == "0px") {
+            menuItems.style.maxHeight = "200px";
+        } else {
+            menuItems.style.maxHeight = "0px";
+        }
+    }
+
+    $(document).ready(function () {
+        // Show/Hide COD info based on selected payment method
+        $("#paymentMethod").change(function () {
+            if ($(this).val() === "Cash on Delivery (COD)") {
+                $("#codInfo").show();
+            } else {
+                $("#codInfo").hide();
+            }
+        });
+
+        // Function to toggle display of card payment options
+        $("#paymentMethod").change(function () {
+            var paymentMethod = $(this).val();
+            var cardPaymentOptions = $("#cardPaymentOptions");
+
+            if (paymentMethod === "Debit - Credit Card") {
+                cardPaymentOptions.show();
+            } else {
+                cardPaymentOptions.hide();
+            }
+        });
+    });
+</script>
+
+<script>
+    document.querySelector(".contact-form").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        // Validate and display empty field message
+        if (validateForm()) {
+            try {
+                const formData = {
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value,
+                    firstName: document.getElementById("firstName").value,
+                    lastName: document.getElementById("lastName").value,
+                    address: document.getElementById("address").value,
+                    city: document.getElementById("city").value,
+                    postalCode: document.getElementById("postalCode").value,
+                    phone: document.getElementById("phone").value,
+                    shippingMethod: document.getElementById("shippingMethod").value,
+                    paymentMethod: document.getElementById("paymentMethod").value,
+                    cardNumber: document.getElementById("cardNumber").value,
+                    cvv: document.getElementById("cvv").value,
+                    cardholderName: document.getElementById("cardholderName").value,
+                    expirationDate: document.getElementById("expirationDate").value,
+                };
+
+                const response = await fetch("http://localhost:3000/submitOrder", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to submit the order.");
+                }
+
+                // Empty the cart after the order is submitted
+                await fetch("http://localhost:3000/emptyCart", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ /* You may need to include user or session information */ }),
+                });
+
+                // Clear input fields
+                clearForm();
+
+                console.log("Order submitted successfully!");
+                // Handle success as needed
+            } catch (error) {
+                console.error("Error submitting the order:", error);
+                // Handle error as needed
+            }
+        }
+    });
+
+    function validateForm() {
+        // Your existing validation logic goes here
+        // For example, check if required fields are not empty
+        const requiredFields = ["email", "password", "firstName", "lastName", "address", "city", "postalCode", "phone"];
+        for (const field of requiredFields) {
+            const value = document.getElementById(field).value;
+            if (!value) {
+                document.getElementById("emptyfields-message").innerHTML = "Please fill all the fields";
+                return false;
+            }
+        }
+
+        // passwords must contain at least 8 characters, 1 number, 1 uppercase letter, 1 lowercase letter, and 1 special character
+        const password = document.getElementById("password").value;
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+        if (!passwordRegex.test(password)) {
+            document.getElementById("Password-validations").innerHTML = "Password must contain at least 8 characters, 1 number, 1 uppercase letter, 1 lowercase letter, and 1 special character";
+            return false;
+        }
+        else {
+            document.getElementById("Password-validations").innerHTML = "";
+        }
+
+
+        // Clear empty fields message if all validations pass
+        document.getElementById("emptyfields-message").innerHTML = "";
+        return true;
+    }
+
+    function clearForm() {
+        const fields = ["email", "password", "firstName", "lastName", "address", "city", "postalCode", "phone"];
+        fields.forEach((field) => {
+            document.getElementById(field).value = "";
+        });
+
+        document.getElementById("shippingMethod").value = "";
+        document.getElementById("paymentMethod").value = "";
+        document.getElementById("cardNumber").value = "";
+        document.getElementById("cvv").value = "";
+        document.getElementById("cardholderName").value = "";
+        document.getElementById("expirationDate").value = "";
+        document.getElementById("Password-validations").innerHTML = "";
+        document.getElementById("emptyfields-message").innerHTML = "";
+    }
+</script>
+ 
+    
+
+</body>
+
+</html>

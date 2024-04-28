@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/H logo.jpg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <title>Swift Cart</title>
+    <style>
+        body {
+            background-image: url('../images/white.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 400px;
+            margin-left: 310px;
+            margin-top: 90px;
+            background: rgba(31, 23, 23, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-control {
+            width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="font-family: Montserrat">
+        <div class="container" style="color: white;">
+
+            <div style="height: 20px;"></div>
+            <div style="font-size: 45px;"><b> <i class="fas fa-shopping-cart"></i> Swift Cart</b></div>
+            <div style="height: 30px;"></div>
+            <label>Email</label><br>
+            <input type="text" id="email" class="form-control"><br>
+            <label>Password</label><br>
+            <div class="container mt-5">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword" onclick="togglePasswordVisibility()">
+                                <i class="fa fa-eye" id="eye-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="SignUpPage.html" class="form-group ">Forgot Password?</a><br>
+            <div style="height: 17px;"></div>
+            <div style="color: red;" id="empty-message"></div>
+            <div style="height: 17px;"></div>
+            <a href="javascript:void(0)">
+                <button id="signin_btn" class="btn btn-dark form-group form-control" onclick="nextpage()">Sign in</button>
+            </a>
+            <div style="height: 10px;"></div>
+            <p>Don't have an account? <a href="SignUpPage.html">SignUp</a></p>
+            <div id="empty-message"></div>
+
+            <script>
+                function emptyFieldsMessage() {
+                    let email = document.querySelector("#email").value;
+                    let password = document.querySelector("#password").value;
+                    let emptyMessage = document.querySelector("#empty-message");
+
+                    if (email === "" || password === "") {
+                        emptyMessage.innerHTML = "All Fields are required";
+                        return false;
+                    }
+                    emptyMessage.innerHTML = "";
+                    return true;
+                }
+
+                function nextpage() {
+                    if (emptyFieldsMessage()) {
+                        window.location.href = "home.html";
+                    }
+                }
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script type="module" src="./front.js"></script>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <!-- Your footer content goes here -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var eyeIcon = document.getElementById("eye-icon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+
+    <script>
+        var menuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function register() {
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)"
+        }
+
+        function login() {
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+    </script>
+
+</body>
+
+</html>

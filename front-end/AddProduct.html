@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/s logo.png" />
+    <title>Add Products - Red Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      /* Additional styles for the contact card */
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .contact-card {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .contact-form button {
+        padding: 10px;
+        background-color: #ff523b;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #ff523b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar form-group form-control">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" width="125px" /></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="AddProduct.html">AddProducts</a></li>
+            <li><a href="AdminDashboard.html">DashBoard</a></li>
+            <li><a href="Account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart.html"
+          ><img src="images/cart.png" width="30px" height="30px"
+        /></a>
+        <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" />
+      </div>
+    </div>
+
+    <!-- Contact Card -->
+    <div class="contact-card">
+      <h2>Add Product</h2>
+      <div style="height: 20px"></div>
+      <p>Feel free to reach out to us. We are here to help!</p>
+      <div style="height: 20px"></div>
+      <div class="contact-form">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your Name"
+        />
+
+        <label for="email">Category:</label>
+        <input
+          type="text"
+          id="category"
+          name="email"
+          placeholder="Enter your Category"
+        />
+
+        <label for="email">Size:</label>
+        <input
+          type="text"
+          id="size"
+          name="email"
+          placeholder="Enter your size"
+        />
+
+        <label for="email">price:</label>
+        <input
+          type="number"
+          id="price"
+          name="email"
+          placeholder="Enter price"
+        />
+
+        <label for="email">quantity:</label>
+        <input
+          type="text"
+          id="quantity"
+          name="email"
+          placeholder="Enter quantity"
+        />
+
+        <label for="email">Product Image:</label>
+        <input type="file" multiple id="file" name="files" />
+
+        <label for="message">Description:</label>
+        <textarea
+          id="description"
+          name="message"
+          style="height: 90px"
+          placeholder="Enter your message"
+        ></textarea>
+
+        <button type="button" onclick="addProduct()">Submit</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and ios mobile phone.</p>
+            <div class="app-logo">
+              <img src="images/play-store.png" alt="" />
+              <img src="images/app-store.png" alt="" />
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="images/logo-white.png" />
+            <p>
+              Our Purpose Is To Sustainably Make the Pleasure and Benefits of
+              Sports Accessible to the Many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <!--horizontal line-->
+        <p class="copyright">Copyright 2021 - Apurba Kr. Pramanik</p>
+      </div>
+    </div>
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+      var menuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+          MenuItems.style.maxHeight = "200px";
+        } else {
+          MenuItems.style.maxHeight = "0px";
+        }
+      }
+      async function addProduct() {
+        let name = document.getElementById("name").value;
+        let category = document.getElementById("category").value;
+        let size = document.getElementById("size").value;
+        let quantity = document.getElementById("quantity").value;
+        let description = document.getElementById("description").value;
+        let filesElement = document.getElementById("file");
+        let files = filesElement.files;
+        let price = document.getElementById("price").value;
+
+        let headersList = {
+          Accept: "*/*",
+          "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+        };
+       
+        let bodyContent = new FormData();
+        bodyContent.append("Category", category);
+        bodyContent.append("Name", name);
+        bodyContent.append("Description", description);
+        bodyContent.append("Price", price);
+        bodyContent.append("Size", size);
+        bodyContent.append("Quantity", quantity);
+
+        for (let i = 0; i < files.length; i++) {
+          bodyContent.append("files", files[i]);
+        }
+
+        let response = await fetch("http://localhost:3000/addProduct", {
+          method: "POST",
+          body: bodyContent,
+          headers: headersList,
+        });
+
+        let data = await response.text();
+        console.log(data);
+      }
+    </script>
+  </body>
+</html>
